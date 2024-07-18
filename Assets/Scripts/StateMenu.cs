@@ -14,6 +14,7 @@ public class StateMenu : PlayerState
     }
     public void SetNewState()
     {
+        IsThis = false;
         StateMachin.OnNewState(NewState);
     }
 }

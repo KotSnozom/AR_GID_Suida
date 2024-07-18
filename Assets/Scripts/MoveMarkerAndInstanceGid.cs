@@ -1,9 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
+using UnityEngine.InputSystem;
 
 public class MoveMarkerAndInstanceGid : PlayerState
 {
@@ -40,10 +40,14 @@ public class MoveMarkerAndInstanceGid : PlayerState
         return new Vector2(Screen.width / 2, Screen.height / 2);
     }
 
-    public void InstanceGid()
+    public void InstanceGid(InputAction.CallbackContext context)
     {
-        GameObject _newGid = Instantiate(_gid, _newPos, Quaternion.identity);
-        _newGid.transform.LookAt(Camera.main.transform,Vector3.up);
-        StateMachin.OnNewState?.Invoke(NewState);
+        if (context.performed & IsThis)
+        {
+            GameObject _newGid = Instantiate(_gid, _newPos, Quaternion.identity);
+            _newGid.transform.LookAt(Camera.main.transform,Vector3.up);
+            IsThis = false;
+            StateMachin.OnNewState?.Invoke(NewState);
+        }
     }
 }
