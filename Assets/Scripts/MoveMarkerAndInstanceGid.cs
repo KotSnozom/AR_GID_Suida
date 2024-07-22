@@ -42,10 +42,9 @@ public class MoveMarkerAndInstanceGid : PlayerState
 
     public void InstanceGid(InputAction.CallbackContext context)
     {
-        if (context.performed & IsThis)
+        if (context.performed & IsThis & _hits.Count != 0)
         {
             GameObject _newGid = Instantiate(_gid, _newPos, Quaternion.identity);
-            _newGid.transform.LookAt(Camera.main.transform,Vector3.up);
             IsThis = false;
             StateMachin.OnNewState?.Invoke(NewState);
         }
