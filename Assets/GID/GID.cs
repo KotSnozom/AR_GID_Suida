@@ -1,40 +1,49 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class GID : MonoBehaviour
 {
     public static GID instance;
+
     public static UnityAction<StateGID> OnNewState;
-    public static UnityAction<int> OnNewLecture;
+    public static UnityAction<AudioClip> OnSetClip;
 
-    [SerializeField] private AudioSource _audioSourse;
+    [SerializeField] private AudioSource _source;
 
-    [SerializeField] private BDLecture _bdLecture;
-
-    [SerializeField] private StateGID _helloState;
     [SerializeField] private StateGID _currentState;
+    [SerializeField] private Animator _animator;
+    private const string _stateAnim = "State";
 
-    private static Lecture _currentLecture;
     private void Awake()
     {
         instance = this;
     }
-    private void Start()
+    private void OnEnable()
     {
         OnNewState += SetState;
-        _currentState = _helloState;
-        _currentState.Run();
+        OnSetClip += SourserClip;
+        Debug.Log("инит");
+        OnNewState?.Invoke(_currentState);
     }
+
+    private void OnDisable()
+    {
+        OnNewState -= SetState;
+        OnSetClip -= SourserClip;
+    }
+
+    private void SourserClip(AudioClip clip)
+    {
+        _source.clip = clip;
+        _source.Play();
+    }
+
     private void SetState(StateGID stateGID)
     {
         _currentState = stateGID;
+        Debug.Log(_currentState.GetIndexAnim());
+        _animator.SetInteger(_stateAnim,_currentState.GetIndexAnim());
+
         _currentState.Run();
-    }
-    public BDLecture GetBD()
-    {
-        return _bdLecture;
     }
 }

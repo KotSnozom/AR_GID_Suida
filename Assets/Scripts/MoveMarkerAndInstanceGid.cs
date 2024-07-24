@@ -9,7 +9,7 @@ public class MoveMarkerAndInstanceGid : PlayerState
 {
     [SerializeField] private Text _countHit;
     [SerializeField] private Transform _marker;
-    [SerializeField] private GameObject _gid;
+    [SerializeField] private GID _gid;
     private Vector3 _newPos;
 
     [SerializeField] private ARRaycastManager _ARManager;
@@ -19,10 +19,6 @@ public class MoveMarkerAndInstanceGid : PlayerState
     {
         _posRay = GetScreenPos();
     }
-    public override void Init()
-    {
-        IsThis = true;
-    }
 
     public override void Run()
     {
@@ -31,8 +27,6 @@ public class MoveMarkerAndInstanceGid : PlayerState
             _newPos = _hits[0].pose.position;
             _marker.position = _newPos;
         }
-        _countHit.text = _hits.Count.ToString();
-        Debug.Log("Типа установка гида");
     }
 
     private Vector2 GetScreenPos()
@@ -42,10 +36,10 @@ public class MoveMarkerAndInstanceGid : PlayerState
 
     public void InstanceGid(InputAction.CallbackContext context)
     {
-        if (context.performed & IsThis & _hits.Count != 0)
+        if (context.performed & _hits.Count != 0)
         {
-            GameObject _newGid = Instantiate(_gid, _newPos, Quaternion.identity);
-            IsThis = false;
+            _gid.transform.position = _hits[0].pose.position;
+            _gid.gameObject.SetActive(true);
             StateMachin.OnNewState?.Invoke(NewState);
         }
     }

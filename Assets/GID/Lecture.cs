@@ -6,7 +6,6 @@ using UnityEngine;
 public class Lecture
 {
     public string Name;
-    public bool IsQuestion;
-    public int IndexLecture;
     public AudioClip LectureClip;
+    public List<Question> questions;
 }

@@ -14,20 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _lectures:
   - Name: "\u041B\u0435\u043A\u0446\u0438\u044F1"
-    IsQuestion: 1
-    IndexLecture: 1
-    LectureClip: {fileID: 8300000, guid: 4f76c79980600074280828c5ae198e9a, type: 3}
+    LectureClip: {fileID: 8300000, guid: 6754fb841ab5c2344b2b8eefbed2007f, type: 3}
+    questions:
+    - Name: "\u041A\u0442\u043E \u0442\u0430\u043A\u043E\u0439 \u041F\u0443\u0448\u043A\u0438\u043D"
+      AudioClip: {fileID: 8300000, guid: 0d45bcf662720a142ad3da70291df8b9, type: 3}
+    - Name: "\u0414\u043E\u043F. \u043F\u0440\u043E \u0413\u0430\u043D\u0438\u0431\u0430\u043B\u0430"
+      AudioClip: {fileID: 8300000, guid: 4f76c79980600074280828c5ae198e9a, type: 3}
   - Name: "\u041B\u0435\u043A\u0446\u0438\u044F2"
-    IsQuestion: 1
-    IndexLecture: 2
-    LectureClip: {fileID: 8300000, guid: 4f76c79980600074280828c5ae198e9a, type: 3}
+    LectureClip: {fileID: 8300000, guid: 6754fb841ab5c2344b2b8eefbed2007f, type: 3}
+    questions: []
+  - Name: "\u041B\u0435\u043A\u0446\u0438\u044F3"
+    LectureClip: {fileID: 8300000, guid: 6754fb841ab5c2344b2b8eefbed2007f, type: 3}
+    questions: []
+  - Name: "\u041B\u0435\u043A\u0446\u0438\u044F4"
+    LectureClip: {fileID: 8300000, guid: f0632c09f9fb82d438e102a994dd75cb, type: 3}
+    questions: []
   _hello:
     Name: "\u041F\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u0438\u0435"
-    IsQuestion: 0
-    IndexLecture: 0
-    LectureClip: {fileID: 8300000, guid: 4f76c79980600074280828c5ae198e9a, type: 3}
+    LectureClip: {fileID: 8300000, guid: f0632c09f9fb82d438e102a994dd75cb, type: 3}
+    questions: []
   _end:
     Name: "\u041F\u0440\u043E\u0449\u0430\u043D\u0438\u0435"
-    IsQuestion: 0
-    IndexLecture: 0
     LectureClip: {fileID: 8300000, guid: 0d45bcf662720a142ad3da70291df8b9, type: 3}
+    questions: []
