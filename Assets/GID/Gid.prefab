@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea67fb8602fac024f981a78fe9521897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewState: {fileID: 1434953348167409354}
   BoolAnim: 2
+  NewState: {fileID: 8460898153825460049}
   _questionPanel: {fileID: 0}
+  _nonQuestState: {fileID: 1434953348167409354}
 --- !u!1 &3084424630437098545
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,8 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 153f7ecc50c2fd543ad317adb5d5d46a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewState: {fileID: 1434953348167409354}
   BoolAnim: 0
+  NewState: {fileID: 1434953348167409354}
 --- !u!1 &5203980186579926896
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,8 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637fc613cc5be534280fa2a502d06421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewState: {fileID: 8182241789122385727}
   BoolAnim: 1
+  NewState: {fileID: 8182241789122385727}
   _end: {fileID: 8132508474922943777}
 --- !u!1 &6501894078511440742
 GameObject:
@@ -250,7 +251,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8340365358740219262}
-  - component: {fileID: 5754477209091824701}
+  - component: {fileID: 8460898153825460049}
   m_Layer: 0
   m_Name: StateQuestion
   m_TagString: Untagged
@@ -273,7 +274,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 623496480857042219}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5754477209091824701
+--- !u!114 &8460898153825460049
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -282,11 +283,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6501894078511440742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c4f6a4073d37aa49bf4846c14fd592f, type: 3}
+  m_Script: {fileID: 11500000, guid: 648312c7cb6ee9348bd4f975d95bf5b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BoolAnim: 0
   NewState: {fileID: 8182241789122385727}
-  BoolAnim: 1
 --- !u!1 &7834657099681284867
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,8 +332,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c4c1c1ff0422744935668c6bcc21e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewState: {fileID: 0}
   BoolAnim: 3
+  NewState: {fileID: 0}
 --- !u!1 &9173965838259309649
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,7 +351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &623496480857042219
 Transform:
   m_ObjectHideFlags: 0
@@ -481,7 +482,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _source: {fileID: 593060376519379660}
-  _bdLecture: {fileID: 11400000, guid: e404d9f66ccd6134e9dd9f5c249e09e5, type: 2}
   _currentState: {fileID: 4472394359838720948}
   _animator: {fileID: 8829411066962033736}
 --- !u!1001 &5950091534570988303

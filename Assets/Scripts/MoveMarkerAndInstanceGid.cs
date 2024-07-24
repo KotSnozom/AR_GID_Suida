@@ -1,13 +1,11 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.InputSystem;
 
 public class MoveMarkerAndInstanceGid : PlayerState
 {
-    [SerializeField] private Text _countHit;
     [SerializeField] private Transform _marker;
     [SerializeField] private GID _gid;
     private Vector3 _newPos;

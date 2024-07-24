@@ -5,6 +5,8 @@ using UnityEngine;
 public class CreateButtonQuestion : MonoBehaviour
 {
     [SerializeField] private ActiveCurrentQuestions _activeQuestions;
+
+    [SerializeField] private RectTransform _questPanel;
     [SerializeField] private ButtonQuest _buttonPrefab;
     [SerializeField] private RectTransform _parent;
     [SerializeField] private RectTransform _content;
@@ -27,7 +29,7 @@ public class CreateButtonQuestion : MonoBehaviour
                 foreach (var questions in lecture.questions)
                 {
                     ButtonQuest _quest = Instantiate(_buttonPrefab, _myLecture);
-                    _quest.Init(questions.Name,i);
+                    _quest.Init(questions.Name,i,_questPanel);
                     _quest.name = questions.Name;
                     i++;
                 }
