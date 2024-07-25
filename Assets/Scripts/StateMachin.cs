@@ -23,6 +23,7 @@ public class StateMachin : MonoBehaviour
     private void SetState(PlayerState playerState)
     {
         _currentState = playerState;
+        _currentState.Init();
     }
     public void SetGameFromMenu()
     {

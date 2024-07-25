@@ -41,7 +41,6 @@ public class GID : MonoBehaviour
     private void SetState(StateGID stateGID)
     {
         _currentState = stateGID;
-        Debug.Log(_currentState.GetIndexAnim());
         _animator.SetInteger(_stateAnim,_currentState.GetIndexAnim());
 
         _currentState.Run();

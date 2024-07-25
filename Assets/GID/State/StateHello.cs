@@ -7,7 +7,6 @@ public class StateHello : StateGID
     {
         var _bd = BDLectures.instance.GetBD();
         float _time = _bd.Hello.LectureClip.length;
-        Debug.Log(_time);
 
         StartCoroutine(Hello());
         IEnumerator Hello()

@@ -17,6 +17,10 @@ public class MoveMarkerAndInstanceGid : PlayerState
     {
         _posRay = GetScreenPos();
     }
+    public override void Init()
+    {
+        IsThis = true;
+    }
 
     public override void Run()
     {
@@ -34,11 +38,14 @@ public class MoveMarkerAndInstanceGid : PlayerState
 
     public void InstanceGid(InputAction.CallbackContext context)
     {
-        if (context.performed & _hits.Count != 0)
+        if (context.performed & _hits.Count != 0 & IsThis)
         {
+            Debug.Log("Попытка установки гида");
             _gid.transform.position = _hits[0].pose.position;
             _gid.gameObject.SetActive(true);
+            IsThis = false;
             StateMachin.OnNewState?.Invoke(NewState);
         }
     }
+
 }

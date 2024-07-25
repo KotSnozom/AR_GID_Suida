@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,4 +7,5 @@ public class Lecture
     public string Name;
     public AudioClip LectureClip;
     public List<Question> questions;
+    public GameObject Ecsponat;
 }

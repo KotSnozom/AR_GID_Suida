@@ -258,13 +258,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 940119679}
+        m_TargetAssemblyTypeName: StateGame, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: ccb74ae1-77d1-4f39-9e14-ad714027c66b
     m_ActionName: Player/Tap
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1970388836}
 --- !u!1 &108088214
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +330,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3471365815958592884, guid: 0f0c4b19b5095a6479d38d896d5bddaf, type: 3}
   m_PrefabInstance: {fileID: 3064796196230797263}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &547322100 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1434953348167409354, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
+  m_PrefabInstance: {fileID: 1701641774}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 637fc613cc5be534280fa2a502d06421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &552272453
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,6 +964,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NewState: {fileID: 0}
+  _layer:
+    serializedVersion: 2
+    m_Bits: 64
+  _dist: 3
+  _camera: {fileID: 1970388831}
 --- !u!1 &963715195
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,9 +1140,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2141111206}
-        m_TargetAssemblyTypeName: StateSetQuestion, Assembly-CSharp
-        m_MethodName: SetNonQuestion
+      - m_Target: {fileID: 547322100}
+        m_TargetAssemblyTypeName: StateLecture, Assembly-CSharp
+        m_MethodName: AddIndex
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1577,6 +1605,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 593060376519379660, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
+      propertyPath: m_Pitch
+      value: 0.9
+      objectReference: {fileID: 0}
     - target: {fileID: 623496480857042219, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1629,10 +1661,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gid
       objectReference: {fileID: 0}
-    - target: {fileID: 9173965838259309649, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1682,7 +1710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ed5f9f17ee940348b6243ae416647db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NewState: {fileID: 108088216}
+  NewState: {fileID: 940119679}
 --- !u!1 &1939973279
 GameObject:
   m_ObjectHideFlags: 0
@@ -2313,17 +2341,6 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
---- !u!114 &2141111206 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8182241789122385727, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
-  m_PrefabInstance: {fileID: 1701641774}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea67fb8602fac024f981a78fe9521897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3064796196230797263
 PrefabInstance:
   m_ObjectHideFlags: 0

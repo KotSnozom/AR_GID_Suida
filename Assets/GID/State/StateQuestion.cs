@@ -17,7 +17,7 @@ public class StateQuestion : StateGID
     }
     public void Run(int index)
     {
-        _indexL = StateLecture.GetIndexLecture() - 1;
+        _indexL = StateLecture.GetIndexLecture();
         Debug.Log($"доп вопрос{_indexL} {index}");
         float _time = _bd.Lectures[_indexL].questions[index].AudioClip.length;
         GID.OnSetClip?.Invoke(_bd.Lectures[_indexL].questions[index].AudioClip);

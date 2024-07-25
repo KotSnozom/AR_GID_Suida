@@ -18,7 +18,7 @@ public class ActiveCurrentQuestions : MonoBehaviour
             item.gameObject.SetActive(false);
         }
 
-        int _indexLecture = StateLecture.GetIndexLecture() - 1;
+        int _indexLecture = StateLecture.GetIndexLecture();
         _ListQuestionsPanels[_indexLecture].gameObject.SetActive(true);
     }
 }
