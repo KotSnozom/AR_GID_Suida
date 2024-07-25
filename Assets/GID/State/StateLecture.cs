@@ -8,25 +8,15 @@ public class StateLecture : StateGID
     public static UnityAction OnAddIndex;
     [SerializeField] private StateGID _end;
 
-    private List<GameObject> _ecsponate = new List<GameObject>();
-    BDLecture _bd;
+    [SerializeField] private CreateEcsponate _createEcsponate; 
+
+    private BDLecture _bd;
     private static int _indexLecture;
 
     private void OnEnable()
     {
+        _bd = BDLectures.instance.GetBD();
         OnAddIndex += AddIndex;
-
-        StartCoroutine(Init());
-        IEnumerator Init()
-        {
-            _bd = BDLectures.instance.GetBD();
-
-            for (int i = 0; i < _bd.Lectures.Count; i++)
-            {
-                _ecsponate.Add(_bd.Lectures[i].Ecsponat);
-            }
-            yield return null;
-        }
     }
     private void OnDisable()
     {
@@ -35,8 +25,6 @@ public class StateLecture : StateGID
 
     public override void Run()
     {
-        var _bd = BDLectures.instance.GetBD();
-
         StartCoroutine(Lectur());
         IEnumerator Lectur()
         {
@@ -44,15 +32,21 @@ public class StateLecture : StateGID
             {
                 Debug.Log(_indexLecture);
                 Debug.Log($"Начало лекции {_bd.Lectures[_indexLecture].Name}");
+
                 float _time = _bd.Lectures[_indexLecture].LectureClip.length;
                 GID.OnSetClip?.Invoke(_bd.Lectures[_indexLecture].LectureClip);
-                if (_ecsponate[_indexLecture] != null)
+
+                if (_bd.Lectures[_indexLecture].Ecsponat != null)
                 {
-                    Debug.Log(_bd.Lectures[_indexLecture].Ecsponat.name);
+                    Debug.Log("Включение экспоната");
+                    _createEcsponate.ActiveEcsponate(_indexLecture);
                 }
                 Debug.Log(_time);
                 yield return new WaitForSeconds(_bd.Lectures[_indexLecture].LectureClip.length);
                 Debug.Log($"Конец лекции {_bd.Lectures[_indexLecture].Name}");
+
+                _createEcsponate.CloseEcsponate(_indexLecture);
+
                 if (_bd.Lectures[_indexLecture].questions.Count != 0)
                 {
                     GID.OnNewState(NewState);

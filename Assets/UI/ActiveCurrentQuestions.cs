@@ -13,12 +13,13 @@ public class ActiveCurrentQuestions : MonoBehaviour
 
     public void ActiveCurrentQuests()
     {
+        int _indexLecture = StateLecture.GetIndexLecture();
+        Debug.Log($"Активация {_indexLecture}");
         foreach (var item in _ListQuestionsPanels)
         {
             item.gameObject.SetActive(false);
         }
 
-        int _indexLecture = StateLecture.GetIndexLecture();
         _ListQuestionsPanels[_indexLecture].gameObject.SetActive(true);
     }
 }
