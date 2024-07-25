@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.InputSystem;
+using Unity.Mathematics;
 
 public class MoveMarkerAndInstanceGid : PlayerState
 {
@@ -12,6 +13,7 @@ public class MoveMarkerAndInstanceGid : PlayerState
 
     [SerializeField] private ARRaycastManager _ARManager;
     private List<ARRaycastHit> _hits = new List<ARRaycastHit>();
+    private Transform _camera;
     private Vector2 _posRay;
     private void Start()
     {
@@ -20,6 +22,7 @@ public class MoveMarkerAndInstanceGid : PlayerState
     public override void Init()
     {
         IsThis = true;
+        _camera = Camera.main.transform;
     }
 
     public override void Run()
@@ -43,6 +46,7 @@ public class MoveMarkerAndInstanceGid : PlayerState
             Debug.Log("Попытка установки гида");
             _gid.transform.position = _hits[0].pose.position;
             _gid.gameObject.SetActive(true);
+            _gid.transform.LookAt(new Vector3(_camera.position.x, 0, _camera.position.z));
             IsThis = false;
             StateMachin.OnNewState?.Invoke(NewState);
         }
