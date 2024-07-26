@@ -22,7 +22,7 @@ public class GID : MonoBehaviour
     {
         OnNewState += SetState;
         OnSetClip += SourserClip;
-        Debug.Log("инит");
+
         OnNewState?.Invoke(_currentState);
     }
 

@@ -12,7 +12,7 @@ public class MoveMarkerAndInstanceGid : PlayerState
     private Vector3 _newPos;
 
     [SerializeField] private ARRaycastManager _ARManager;
-    private List<ARRaycastHit> _hits = new List<ARRaycastHit>();
+    private readonly List<ARRaycastHit> _hits = new List<ARRaycastHit>();
     private Transform _camera;
     private Vector2 _posRay;
     private void Start()
@@ -46,10 +46,13 @@ public class MoveMarkerAndInstanceGid : PlayerState
             Debug.Log("Попытка установки гида");
             _gid.transform.position = _hits[0].pose.position;
             _gid.gameObject.SetActive(true);
-            _gid.transform.LookAt(new Vector3(_camera.position.x, 0, _camera.position.z));
+
+            var _playerPos = _camera.transform.position;
+            _playerPos.y = _hits[0].pose.position.y;
+            _gid.transform.LookAt(_playerPos);
+
             IsThis = false;
             StateMachin.OnNewState?.Invoke(NewState);
         }
     }
-
 }
