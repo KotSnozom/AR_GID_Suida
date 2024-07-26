@@ -29,6 +29,7 @@ public class StateSetQuestion : StateGID
     }
     public void SetQuestion(int index)
     {
+        _questionPanel.SetActive(false);
         GID.OnNewState?.Invoke(NewState);
     }
 }

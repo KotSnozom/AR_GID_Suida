@@ -31,7 +31,7 @@ MonoBehaviour:
       AudioClip: {fileID: 8300000, guid: b0ad2540f07080f4da1a9f0017d47ca2, type: 3}
     Ecsponat: {fileID: 919132149155446097, guid: cc3f150eba9fc6c4898be7933850c1f5, type: 3}
   - Name: "\u0410\u0440\u0430\u043F \u041F\u0435\u0442\u0440\u0430"
-    LectureClip: {fileID: 8300000, guid: ef573d7b539938b428e807e308c596d8, type: 3}
+    LectureClip: {fileID: 8300000, guid: 90c3213c96459ed48834298fb8755e76, type: 3}
     questions: []
     Ecsponat: {fileID: 0}
   - Name: "\u041B\u0435\u0433\u0435\u043D\u0434\u0430 \u043E \u0433\u0435\u0440\u0431\u0435"
