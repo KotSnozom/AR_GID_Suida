@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -383,8 +383,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 80
+    m_Font: {fileID: 12800000, guid: de4290ec1ca99d547a187ab4cfd660ee, type: 3}
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.03137255, g: 0.03529412, b: 0.039215688, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -889,7 +889,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -897,7 +897,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: de4290ec1ca99d547a187ab4cfd660ee, type: 3}
     m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
@@ -1047,6 +1047,17 @@ MonoBehaviour:
     m_Bits: 64
   _dist: 3
   _camera: {fileID: 1970388831}
+--- !u!114 &962560973 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4564394373742458166, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
+  m_PrefabInstance: {fileID: 1701641774}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378d5355507ea7640a6ec4aee7d331b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1016703925 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6694815328159475351, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
@@ -1141,6 +1152,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 962560973}
+        m_TargetAssemblyTypeName: CreateEcsponate, Assembly-CSharp
+        m_MethodName: CloseEcsponate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 547322100}
         m_TargetAssemblyTypeName: StateLecture, Assembly-CSharp
         m_MethodName: AddIndex
@@ -1178,7 +1201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3647059, g: 0.99215686, b: 0.79607844, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1323,7 +1346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4862745, g: 0.7764706, b: 0.99607843, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1348,6 +1371,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285073229}
   m_CullTransparentMesh: 1
+--- !u!95 &1312841126 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2536799550471948776, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
+  m_PrefabInstance: {fileID: 1701641774}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1503050215
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +1426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1406,12 +1434,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 70
+    m_Font: {fileID: 12800000, guid: de4290ec1ca99d547a187ab4cfd660ee, type: 3}
+    m_FontSize: 80
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 7
-    m_MaxSize: 72
+    m_MinSize: 0
+    m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1724,10 +1752,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6694815328159475351, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
-      propertyPath: _target
+    - target: {fileID: 1434953348167409354, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
+      propertyPath: _indexNonEcsponate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2536799550471948776, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
+      propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 1970388831}
+      objectReference: {fileID: 9100000, guid: 77416cb2f278e38488d2f2c9466b2b4b, type: 2}
+    - target: {fileID: 3692073476571764478, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692073476571764478, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694815328159475351, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 1312841126}
     - target: {fileID: 8182241789122385727, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
       propertyPath: _questionPanel
       value: 
@@ -1736,10 +1780,10 @@ PrefabInstance:
       propertyPath: _activeQuestions
       value: 
       objectReference: {fileID: 829792585}
-    - target: {fileID: 8940282968697787972, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
-      propertyPath: m_Data.m_SourceObjects.m_Item0.transform
-      value: 
-      objectReference: {fileID: 1970388831}
+    - target: {fileID: 8460898153825460049, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
+      propertyPath: BoolAnim
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9173965838259309649, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}
       propertyPath: m_Name
       value: Gid
@@ -2079,7 +2123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5882353}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2244,7 +2288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2252,11 +2296,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 80
+    m_Font: {fileID: 12800000, guid: de4290ec1ca99d547a187ab4cfd660ee, type: 3}
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 8
+    m_MinSize: 7
     m_MaxSize: 80
     m_Alignment: 4
     m_AlignByGeometry: 0

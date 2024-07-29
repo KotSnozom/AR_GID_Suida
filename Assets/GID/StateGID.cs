@@ -6,7 +6,7 @@ public abstract class StateGID : MonoBehaviour
     [Header("Состояния")]
     [SerializeField] protected StateGID NewState;
     public abstract void Run();
-    public int GetIndexAnim()
+    public virtual int GetIndexAnim()
     {
         return BoolAnim;
     }

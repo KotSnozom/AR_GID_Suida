@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,7 +8,7 @@ public class StateLecture : StateGID
 {
     public static UnityAction OnAddIndex;
     [SerializeField] private StateGID _end;
-
+    [SerializeField] private int _indexNonEcsponate;
     [SerializeField] private CreateEcsponate _createEcsponate; 
 
     private BDLecture _bd;
@@ -18,6 +19,7 @@ public class StateLecture : StateGID
         _bd = BDLectures.instance.GetBD();
         OnAddIndex += AddIndex;
     }
+
     private void OnDisable()
     {
         OnAddIndex -= AddIndex;
@@ -39,13 +41,12 @@ public class StateLecture : StateGID
                 if (_bd.Lectures[_indexLecture].Ecsponat != null)
                 {
                     Debug.Log("Включение экспоната");
-                    _createEcsponate.ActiveEcsponate(_indexLecture);
+                    _createEcsponate.ActiveEcsponate();
                 }
+
                 Debug.Log(_time);
                 yield return new WaitForSeconds(_bd.Lectures[_indexLecture].LectureClip.length);
                 Debug.Log($"Конец лекции {_bd.Lectures[_indexLecture].Name}");
-
-                _createEcsponate.CloseEcsponate(_indexLecture);
 
                 if (_bd.Lectures[_indexLecture].questions.Count != 0)
                 {
@@ -53,12 +54,22 @@ public class StateLecture : StateGID
                 }
                 else
                 {
+                    if (_bd.Lectures[_indexLecture].Ecsponat != null)
+                        _createEcsponate.CloseEcsponate();
+
                     _indexLecture++;
                     GID.OnNewState(this);
                 }
             }
             else GID.OnNewState(_end);
         }
+    }
+
+    public override int GetIndexAnim()
+    {
+        if (_bd.Lectures[_indexLecture].Ecsponat != null)
+            return base.GetIndexAnim();
+        else return _indexNonEcsponate;
     }
 
     public void AddIndex()

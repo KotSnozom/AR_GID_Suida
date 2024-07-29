@@ -33,16 +33,18 @@ public class CreateEcsponate : MonoBehaviour
             yield return null;
         }
     }
-    public void ActiveEcsponate(int index)
+    public void ActiveEcsponate()
     {
-        Debug.Log(_ecsponate[index].name);
-        GameObject _currentE = _ecsponate[index];
+        int _index = StateLecture.GetIndexLecture();
+        Debug.Log(_ecsponate[_index].name);
+        GameObject _currentE = _ecsponate[_index];
         _currentE.SetActive(true);
     }
-    public void CloseEcsponate(int index)
+    public void CloseEcsponate()
     {
-        Debug.Log(_ecsponate[index].name);
-        GameObject _currentE = _ecsponate[index];
+        int _index = StateLecture.GetIndexLecture();
+        Debug.Log(_ecsponate[_index].name);
+        GameObject _currentE = _ecsponate[_index];
         _currentE.SetActive(false);
     }
 }
