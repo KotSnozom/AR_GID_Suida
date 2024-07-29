@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -270,8 +270,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 940119679}
+        m_TargetAssemblyTypeName: StateGame, Assembly-CSharp
+        m_MethodName: EndMoveGid
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: ccb74ae1-77d1-4f39-9e14-ad714027c66b
     m_ActionName: Player/Tap
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 940119679}
+        m_TargetAssemblyTypeName: StateGame, Assembly-CSharp
+        m_MethodName: StartMoveGid
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1f9459fc-0f6d-4c6e-9d03-29f7ce219394
+    m_ActionName: Player/Hold[/Simulated Touchscreen/primaryTouch/press]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -489,7 +517,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -522,7 +550,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -1047,6 +1075,7 @@ MonoBehaviour:
     m_Bits: 64
   _dist: 3
   _camera: {fileID: 1970388831}
+  _moveMarkerAndInstanceGid: {fileID: 108088216}
 --- !u!114 &962560973 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4564394373742458166, guid: 3285397699a6e9e449d8f5a3724a069c, type: 3}

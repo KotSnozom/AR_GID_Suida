@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using UnityEngine.InputSystem;
-using Unity.Mathematics;
 
 public class MoveMarkerAndInstanceGid : PlayerState
 {
@@ -54,5 +53,14 @@ public class MoveMarkerAndInstanceGid : PlayerState
             IsThis = false;
             StateMachin.OnNewState?.Invoke(NewState);
         }
+    }
+
+    public void MoverGid()
+    {
+        Run();
+        _gid.transform.position = _hits[0].pose.position;
+        var _playerPos = _camera.transform.position;
+        _playerPos.y = _hits[0].pose.position.y;
+        _gid.transform.LookAt(_playerPos);
     }
 }
